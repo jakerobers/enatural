@@ -56,6 +56,7 @@ The stemmer removes unwanted patterns. A custom list of regexes can be provided,
 ## Prospective Features
 ### - Normalizer
 ### - Bayes Theorem
+### - FileIO for dictionaries and training data
 ### - Word Frequencies
 ### - Entropy
 
