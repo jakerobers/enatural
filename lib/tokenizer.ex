@@ -15,7 +15,7 @@ already split by using String.split/1 or an equivelent.
   Masks an ngram based on tokens.
 
   iex> data = ["I", "love", "the", "United", "States", "of", "America"]
-  iex> training_set = [{"United States of America", ["United", "States", "of", "America"]}, {"doctor", ["dr."]}]
+  iex> training_set = [{"United States of America", ["United", "States", "of", "America"]}, {"dr.", ["doctor"]}]
   iex> transform(data, training_set)
   iex> ["I", "love", "the", "United States of America"]
   """

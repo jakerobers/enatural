@@ -1,6 +1,7 @@
 defmodule Enatural.Stemmer do
 
-  @regexes [{"ss", "sses$"}, {"i", "ies$"}, {"ss", "ss$"}, {"", "s$"}, {"", "'s$"}]
+  @plural_regexes [{"ss", "sses$"}, {"i", "ies$"}, {"ss", "ss$"}, {"", "s$"}, {"", "'s$"}]
+  @grammar_suffix_regexes [{"", "ing$"}, {"", "ed$"}, {"", "ful$"}, {"", "fully$"}, {"", "ment$"}, {"", "ion$"} ,{"", "ly$"}]
 
   @doc """
   Standard stemming that removes plurals and 's.
@@ -9,8 +10,12 @@ defmodule Enatural.Stemmer do
   iex> stem_standard(data)
   ["Show", "me", "all", "of", "jake", "and", "joe", "task"]
   """
-  def stem_standard(data) do
-    stem(data, @regexes, [])
+  def stem_plural(data) do
+    stem(data, @plural_regexes, [])
+  end
+
+  def stem_grammar_suffix(data) do
+    stem(data, @grammar_suffix_regexes, [])
   end
 
   @doc """
