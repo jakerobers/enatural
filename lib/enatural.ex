@@ -9,7 +9,7 @@ defmodule Enatural do
       away: 1,
       day: 1,
       doctor: 1,
-      keeps: 1,
+      keeps: 1
     }
   """
   def frequency(sample), do: frequency(sample, %{})
